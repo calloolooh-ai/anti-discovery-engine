@@ -124,3 +124,40 @@ export interface HistoricalValidationResult {
   graph_export: GraphExport;
   validation_text: string;
 }
+
+// --- Type-C Inversion ("Antimatter Query") ---
+export interface Inversion {
+  inversion_id: string;
+  cause: string;
+  effect: string;
+  verb: string;
+  forward_count: number;
+  reverse_count: number;
+  example_titles: string[];
+  statement: string;
+  inverse_question: string;
+}
+
+export interface InversionsResponse {
+  job_id: string;
+  inversions: Inversion[];
+}
+
+// --- Cascade Map ---
+export interface UnlockedGap {
+  gap_id: string;
+  node_a: string;
+  node_b: string;
+  distance_before: number | null;
+  distance_after: number | null;
+  centrality_lift: number;
+}
+
+export interface CascadeResult {
+  gap_id: string;
+  found: boolean;
+  new_edge: [string, string] | null;
+  unlocked_gaps: UnlockedGap[];
+  unlocked_count: number;
+  affected_nodes: string[];
+}

@@ -12,6 +12,7 @@ import { StatusBar } from "./components/StatusBar";
 import { LoadingOverlay } from "./components/LoadingOverlay";
 import { Onboarding, shouldShowOnboarding } from "./components/Onboarding";
 import { ChatBot } from "./components/ChatBot";
+import { InversionPanel } from "./components/InversionPanel";
 import type { BuildRequest, HistoricalValidationResult } from "./types";
 
 function App() {
@@ -164,6 +165,7 @@ function App() {
       </div>
 
       <ChatBot graphData={activeGraphData} gaps={activeGaps} />
+      <InversionPanel graphData={activeGraphData} />
     </>
   );
 }
