@@ -1,12 +1,16 @@
 import React, { useRef, useCallback, useMemo, useState, useEffect } from "react";
 import ForceGraph2D from "react-force-graph-2d";
-import type { GraphExport, GraphNode } from "../types";
+import type { GraphExport, GraphNode, CascadeResult } from "../types";
+import { getCascade } from "../api/inversions";
 import {
   getCommunityColor,
   gapColor,
   regularEdgeColor,
   backgroundColor,
 } from "../styles/theme";
+
+const CASCADE_NODE_COLOR = "#22d3ee";
+const CASCADE_GAP_COLOR = "#10b981";
 
 interface Props {
   graphData: GraphExport;
@@ -114,11 +118,42 @@ export const GraphCanvas: React.FC<Props> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [linkLabel, setLinkLabel] = useState<LinkLabel | null>(null);
+  const [cascade, setCascade] = useState<CascadeResult | null>(null);
 
   // Clear a stale clicked-link label when the graph is rebuilt
   useEffect(() => {
     setLinkLabel(null);
   }, [graphData]);
+
+  // Fetch the downstream cascade when a gap is selected on a live graph.
+  useEffect(() => {
+    const jobId = graphData.job_id;
+    if (!selectedGapId || !jobId || jobId === "demo") {
+      setCascade(null);
+      return;
+    }
+    let cancelled = false;
+    getCascade(jobId, selectedGapId)
+      .then((res) => {
+        if (!cancelled) setCascade(res.found ? res : null);
+      })
+      .catch(() => {
+        if (!cancelled) setCascade(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedGapId, graphData.job_id]);
+
+  // Fast lookups for cascade highlighting.
+  const cascadeNodeSet = useMemo(
+    () => new Set(cascade?.affected_nodes ?? []),
+    [cascade]
+  );
+  const cascadeGapSet = useMemo(
+    () => new Set((cascade?.unlocked_gaps ?? []).map((g) => g.gap_id)),
+    [cascade]
+  );
 
   // Build FG-compatible data
   const fgData = useMemo(() => {
@@ -194,14 +229,23 @@ export const GraphCanvas: React.FC<Props> = ({
       const r = nodeRadius(node.paper_count);
       const color = getCommunityColor(node.community_id);
 
+      // Cascade ripple: glow nodes whose centrality the discovery would lift.
+      const inCascade = cascadeNodeSet.has(node.id);
+      if (inCascade) {
+        ctx.beginPath();
+        ctx.arc(x, y, r + 5, 0, 2 * Math.PI);
+        ctx.fillStyle = "rgba(34,211,238,0.18)";
+        ctx.fill();
+      }
+
       ctx.beginPath();
       ctx.arc(x, y, r, 0, 2 * Math.PI);
       ctx.fillStyle = color;
       ctx.fill();
 
-      // Subtle border
-      ctx.strokeStyle = "rgba(255,255,255,0.15)";
-      ctx.lineWidth = 1;
+      // Subtle border (cyan when part of the cascade)
+      ctx.strokeStyle = inCascade ? CASCADE_NODE_COLOR : "rgba(255,255,255,0.15)";
+      ctx.lineWidth = inCascade ? 2 : 1;
       ctx.stroke();
 
       // Label for larger nodes
@@ -217,30 +261,40 @@ export const GraphCanvas: React.FC<Props> = ({
         );
       }
     },
-    []
+    [cascadeNodeSet]
   );
 
   const linkColor = useCallback(
     (link: FGEdge) => {
       if (link.is_gap) {
-        return link.gap_id === selectedGapId ? "#fbbf24" : gapColor;
+        if (link.gap_id === selectedGapId) return "#fbbf24";
+        if (link.gap_id && cascadeGapSet.has(link.gap_id)) return CASCADE_GAP_COLOR;
+        return gapColor;
       }
       return regularEdgeColor;
     },
-    [selectedGapId]
+    [selectedGapId, cascadeGapSet]
   );
 
   const linkWidth = useCallback(
     (link: FGEdge) => {
-      if (link.is_gap) return link.gap_id === selectedGapId ? 3 : 2;
+      if (link.is_gap) {
+        if (link.gap_id === selectedGapId) return 3;
+        if (link.gap_id && cascadeGapSet.has(link.gap_id)) return 2.5;
+        return 2;
+      }
       return Math.max(0.5, link.weight * 2);
     },
-    [selectedGapId]
+    [selectedGapId, cascadeGapSet]
   );
 
   const linkDirectionalParticles = useCallback(
-    (link: FGEdge) => (link.is_gap ? 4 : 0),
-    []
+    (link: FGEdge) => {
+      if (link.gap_id === selectedGapId) return 4;
+      if (link.is_gap && link.gap_id && cascadeGapSet.has(link.gap_id)) return 3;
+      return link.is_gap ? 4 : 0;
+    },
+    [selectedGapId, cascadeGapSet]
   );
 
   const linkDirectionalParticleSpeed = useCallback(
@@ -249,8 +303,18 @@ export const GraphCanvas: React.FC<Props> = ({
   );
 
   const linkDirectionalParticleColor = useCallback(
-    (_link: FGEdge) => gapColor,
-    []
+    (link: FGEdge) => {
+      if (
+        link.is_gap &&
+        link.gap_id !== selectedGapId &&
+        link.gap_id &&
+        cascadeGapSet.has(link.gap_id)
+      ) {
+        return CASCADE_GAP_COLOR;
+      }
+      return gapColor;
+    },
+    [selectedGapId, cascadeGapSet]
   );
 
   const linkLineDash = useCallback(
@@ -364,6 +428,37 @@ export const GraphCanvas: React.FC<Props> = ({
           <span style={legendStyles.label}>Known connection</span>
         </div>
       </div>
+
+      {/* Cascade summary badge */}
+      {cascade && cascade.unlocked_count > 0 && (
+        <div
+          style={{
+            position: "absolute",
+            top: 12,
+            right: 12,
+            background: "rgba(6,78,59,0.92)",
+            border: "1px solid rgba(16,185,129,0.4)",
+            borderRadius: 8,
+            padding: "8px 12px",
+            maxWidth: 240,
+            zIndex: 15,
+            boxShadow: "0 4px 16px rgba(0,0,0,0.5)",
+          }}
+        >
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#34d399" }}>
+            Cascade · {cascade.unlocked_count} downstream gaps
+          </div>
+          <div style={{ fontSize: 11.5, color: "#a7f3d0", marginTop: 3, lineHeight: 1.5 }}>
+            Closing this gap lifts the centrality of{" "}
+            <strong>{cascade.affected_nodes.length}</strong> concepts (cyan),
+            making{" "}
+            <strong style={{ color: CASCADE_GAP_COLOR }}>
+              {cascade.unlocked_count}
+            </strong>{" "}
+            other gaps (green) more bridgeable.
+          </div>
+        </div>
+      )}
 
       {/* Gap hint */}
       <div
