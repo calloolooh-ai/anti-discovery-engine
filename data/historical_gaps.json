@@ -1,0 +1,9 @@
+{
+  "target_gap_name": "Network Science × Epidemiology",
+  "description": "The structural gap between network topology research and infectious disease modeling that existed before researchers applied scale-free network properties to disease spread dynamics.",
+  "actual_discovery_year": 2001,
+  "key_papers": [
+    "Epidemic spreading in scale-free networks (Pastor-Satorras & Vespignani, 2001)",
+    "The structure of scientific collaboration networks (Newman, 2001)"
+  ]
+}
