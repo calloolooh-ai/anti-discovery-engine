@@ -3,16 +3,24 @@ Gap-related API routes.
 """
 from __future__ import annotations
 
+import json
+
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
+from config import DATA_DIR
 from models.gap import Gap, ResearchQuestion
 from state import jobs
 
 router = APIRouter(prefix="/gaps", tags=["gaps"])
 
-# Pre-built demo gaps matching example_graph.json
-_DEMO_GAPS: list[Gap] = [
+# Demo gaps are regenerated alongside example_graph.json by
+# scripts/generate_demo_graph.py and loaded from disk when present, so the
+# leaderboard always resolves to nodes that actually exist in the demo graph.
+_EXAMPLE_GAPS_PATH = DATA_DIR / "example_gaps.json"
+
+# Hand-authored fallback used only if example_gaps.json is missing.
+_FALLBACK_DEMO_GAPS: list[Gap] = [
     Gap(
         gap_id="gap_demo_001",
         type="cross_domain",
@@ -57,6 +65,17 @@ _DEMO_GAPS: list[Gap] = [
 ]
 
 
+def _load_demo_gaps() -> list[Gap]:
+    """Load regenerated demo gaps from disk, falling back to the hand-authored set."""
+    if _EXAMPLE_GAPS_PATH.exists():
+        try:
+            raw = json.loads(_EXAMPLE_GAPS_PATH.read_text())
+            return [Gap(**g) for g in raw]
+        except Exception:
+            pass
+    return _FALLBACK_DEMO_GAPS
+
+
 class QuestionsRequest(BaseModel):
     gap_ids: list[str]
     use_high_quality: bool = False
@@ -78,7 +97,7 @@ def _require_complete_job(job_id: str) -> dict:
 
 @router.get("/demo", response_model=list[Gap])
 async def demo_gaps() -> list[Gap]:
-    return _DEMO_GAPS
+    return _load_demo_gaps()
 
 
 @router.get("/detect/{job_id}", response_model=list[Gap])
@@ -100,7 +119,7 @@ async def generate_questions_endpoint(body: QuestionsRequest) -> list[ResearchQu
     from core.question_generator import generate_questions
 
     # Collect all gaps: demo gaps + all job gaps
-    gap_lookup: dict[str, Gap] = {g.gap_id: g for g in _DEMO_GAPS}
+    gap_lookup: dict[str, Gap] = {g.gap_id: g for g in _load_demo_gaps()}
     for job in jobs.values():
         for gap in job.get("gaps") or []:
             gap_lookup[gap.gap_id] = gap

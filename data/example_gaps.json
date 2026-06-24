@@ -1,0 +1,249 @@
+[
+  {
+    "gap_id": "gap_struct_5d0d9634",
+    "type": "structural",
+    "node_a": "pattern recognition (psychology)",
+    "node_b": "data science",
+    "bridging_concepts": [
+      "artificial intelligence"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Social Sciences",
+    "leverage_score": 79.77,
+    "score_components": {
+      "raw_indirect": 80.0,
+      "betweenness_delta": 0.558,
+      "community_reach": 2,
+      "paper_velocity": 0.8096,
+      "cross_domain_bonus": 1.0
+    },
+    "question": {
+      "question": "Do the contact networks that carry real epidemics share the scale-free degree distributions studied in network science, and if so, how does hub-node superspreading move the epidemic threshold away from the value classical compartmental models predict?",
+      "why_matters": "Answering this unifies network-topology mathematics with epidemiological modelling, yielding outbreak predictions that compartmental models cannot. It pinpoints the minority of nodes responsible for the majority of transmission.",
+      "historical_analogy": "Like Maxwell unifying electricity and magnetism \u2014 two well-studied phenomena whose equivalence was invisible until the right framework connected them.",
+      "model_used": "precomputed-demo",
+      "generated_at": "2026-06-24T00:00:00+00:00",
+      "gap_id": "gap_struct_5d0d9634"
+    }
+  },
+  {
+    "gap_id": "gap_struct_3ab6d99f",
+    "type": "structural",
+    "node_a": "computational biology",
+    "node_b": "graphical user interface",
+    "bridging_concepts": [
+      "software"
+    ],
+    "field_a": "Neuroscience",
+    "field_b": "Life Sciences",
+    "leverage_score": 79.45,
+    "score_components": {
+      "raw_indirect": 81.0,
+      "betweenness_delta": 0.5691,
+      "community_reach": 2,
+      "paper_velocity": 0.7813,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_f5d1c5b8",
+    "type": "structural",
+    "node_a": "genetics",
+    "node_b": "data science",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Social Sciences",
+    "leverage_score": 79.41,
+    "score_components": {
+      "raw_indirect": 126.0,
+      "betweenness_delta": 0.5083,
+      "community_reach": 2,
+      "paper_velocity": 0.8648,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_f2f84207",
+    "type": "structural",
+    "node_a": "machine learning",
+    "node_b": "computation",
+    "bridging_concepts": [
+      "artificial intelligence"
+    ],
+    "field_a": "Psychology",
+    "field_b": "History",
+    "leverage_score": 79.36,
+    "score_components": {
+      "raw_indirect": 87.0,
+      "betweenness_delta": 0.6022,
+      "community_reach": 2,
+      "paper_velocity": 0.7313,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_69978e58",
+    "type": "structural",
+    "node_a": "software",
+    "node_b": "human genome",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Life Sciences",
+    "leverage_score": 79.35,
+    "score_components": {
+      "raw_indirect": 117.0,
+      "betweenness_delta": 0.547,
+      "community_reach": 2,
+      "paper_velocity": 0.8081,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_a8521b84",
+    "type": "structural",
+    "node_a": "gene",
+    "node_b": "data science",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Social Sciences",
+    "leverage_score": 77.85,
+    "score_components": {
+      "raw_indirect": 102.0,
+      "betweenness_delta": 0.4834,
+      "community_reach": 2,
+      "paper_velocity": 0.8371,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_5b66ea2c",
+    "type": "structural",
+    "node_a": "data mining",
+    "node_b": "evolutionary biology",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Psychology",
+    "field_b": "Life Sciences",
+    "leverage_score": 77.28,
+    "score_components": {
+      "raw_indirect": 70.0,
+      "betweenness_delta": 0.5083,
+      "community_reach": 2,
+      "paper_velocity": 0.7797,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_875f1b0e",
+    "type": "structural",
+    "node_a": "data mining",
+    "node_b": "human genome",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Psychology",
+    "field_b": "Life Sciences",
+    "leverage_score": 76.58,
+    "score_components": {
+      "raw_indirect": 130.0,
+      "betweenness_delta": 0.4945,
+      "community_reach": 2,
+      "paper_velocity": 0.7707,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_41d50025",
+    "type": "structural",
+    "node_a": "data mining",
+    "node_b": "exome sequencing",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Psychology",
+    "field_b": "Biochemistry, Genetics and Molecular Biology",
+    "leverage_score": 74.18,
+    "score_components": {
+      "raw_indirect": 70.0,
+      "betweenness_delta": 0.4779,
+      "community_reach": 2,
+      "paper_velocity": 0.6981,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_0334e132",
+    "type": "structural",
+    "node_a": "data mining",
+    "node_b": "exome",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Psychology",
+    "field_b": "Biochemistry, Genetics and Molecular Biology",
+    "leverage_score": 74.18,
+    "score_components": {
+      "raw_indirect": 70.0,
+      "betweenness_delta": 0.4779,
+      "community_reach": 2,
+      "paper_velocity": 0.6981,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_66bac429",
+    "type": "structural",
+    "node_a": "genetics",
+    "node_b": "software",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Medicine",
+    "leverage_score": 73.29,
+    "score_components": {
+      "raw_indirect": 189.0,
+      "betweenness_delta": 0.6022,
+      "community_reach": 2,
+      "paper_velocity": 0.8885,
+      "cross_domain_bonus": 0.0
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_978916d8",
+    "type": "structural",
+    "node_a": "genetics",
+    "node_b": "r package",
+    "bridging_concepts": [
+      "computational biology"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Life Sciences",
+    "leverage_score": 71.83,
+    "score_components": {
+      "raw_indirect": 105.0,
+      "betweenness_delta": 0.4033,
+      "community_reach": 2,
+      "paper_velocity": 0.7085,
+      "cross_domain_bonus": 1.0
+    },
+    "question": null
+  }
+]
