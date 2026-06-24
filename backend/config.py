@@ -10,6 +10,12 @@ load_dotenv(_root / ".env")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
+# --- MongoDB Atlas (optional) ---
+# Set MONGODB_URI to an Atlas connection string to persist saved graphs/gaps.
+# When unset, persistence falls back to an in-memory store (no-op across restarts).
+MONGODB_URI: str = os.getenv("MONGODB_URI", "")
+MONGODB_DB: str = os.getenv("MONGODB_DB", "anti_discovery_engine")
+
 # --- Paper source: OpenAlex (no API key required) ---
 # OpenAlex is fully open — no key, no signup. Providing an email puts requests
 # in the faster "polite pool" (https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication).

@@ -11,7 +11,6 @@ import { GapPanel } from "./components/GapPanel";
 import { StatusBar } from "./components/StatusBar";
 import { LoadingOverlay } from "./components/LoadingOverlay";
 import { Onboarding, shouldShowOnboarding } from "./components/Onboarding";
-import { ChatBot } from "./components/ChatBot";
 import type { BuildRequest, HistoricalValidationResult } from "./types";
 
 function App() {
@@ -162,8 +161,6 @@ function App() {
           />
         </div>
       </div>
-
-      <ChatBot graphData={activeGraphData} gaps={activeGaps} />
     </>
   );
 }
@@ -175,17 +172,20 @@ function EmptyState({ onLoadDemo }: { onLoadDemo: () => void }) {
       <div style={emptyStyles.hex}>⬡</div>
       <h2 style={emptyStyles.title}>Anti-Discovery Engine</h2>
       <p style={emptyStyles.subtitle}>
-        Select fields of study and click{" "}
-        <strong style={{ color: "#f59e0b" }}>Build Graph</strong> to map the
-        knowledge frontier and detect unexplored research gaps.
+        An engine that would have seen the discoveries coming. It maps the
+        topology of scientific knowledge and surfaces the{" "}
+        <strong style={{ color: "#f59e0b" }}>high-leverage gaps</strong> — the
+        questions nobody is asking yet. Select fields and click{" "}
+        <strong style={{ color: "#f59e0b" }}>Build Graph</strong>, or replay
+        history to watch a gap the engine flags <em>before</em> it was closed.
       </p>
       <button style={emptyStyles.demoBtn} onClick={onLoadDemo}>
         Load Example Graph
       </button>
       <div style={emptyStyles.facts}>
-        <Fact label="Nodes" desc="Concepts from paper abstracts" />
-        <Fact label="Edges" desc="Co-occurrence weight" />
-        <Fact label="Gaps" desc="Structural voids by leverage" />
+        <Fact label="Nodes" desc="Concepts from the literature" />
+        <Fact label="Edges" desc="Co-occurrence strength" />
+        <Fact label="Gaps" desc="Unexplored voids, ranked by leverage" />
       </div>
     </div>
   );
