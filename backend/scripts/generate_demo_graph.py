@@ -150,6 +150,13 @@ async def main() -> None:
     curated.sort(key=_gap_sort_key)
     demo_gaps = curated[:N_DEMO_GAPS]
 
+    # Clean generic terms out of bridging_concepts too (e.g. "medline" as a
+    # structural hub bridge node is technically correct but uninformative).
+    for g in demo_gaps:
+        g.bridging_concepts = [
+            b for b in g.bridging_concepts if not _is_generic(b.lower())
+        ]
+
     # Fallback to unfiltered if curation left too few
     if len(demo_gaps) < 4:
         gaps.sort(key=_gap_sort_key)

@@ -1,12 +1,10 @@
 [
   {
-    "gap_id": "gap_struct_7ff60243",
+    "gap_id": "gap_struct_277c5210",
     "type": "structural",
     "node_a": "family medicine",
     "node_b": "psychological intervention",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Decision Sciences",
     "field_b": "Medicine",
     "leverage_score": 43.22,
@@ -67,17 +65,15 @@
       "historical_analogy": "Like Maxwell unifying electricity and magnetism \u2014 two well-studied phenomena whose equivalence was invisible until the right framework connected them.",
       "model_used": "precomputed-demo",
       "generated_at": "2026-06-24T00:00:00+00:00",
-      "gap_id": "gap_struct_7ff60243"
+      "gap_id": "gap_struct_277c5210"
     }
   },
   {
-    "gap_id": "gap_struct_20a18429",
+    "gap_id": "gap_struct_7fe9fea4",
     "type": "structural",
     "node_a": "psychological intervention",
     "node_b": "alternative medicine",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 42.42,
@@ -135,13 +131,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_0f45b93c",
+    "gap_id": "gap_struct_b44b5f1f",
     "type": "structural",
     "node_a": "health care",
     "node_b": "strengthening the reporting of observational studies in epidemiology",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 42.21,
@@ -199,13 +193,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_36be1648",
+    "gap_id": "gap_struct_d3f99c4e",
     "type": "structural",
     "node_a": "health care",
     "node_b": "observational study",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 42.21,
@@ -263,13 +255,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_ca53ae2e",
+    "gap_id": "gap_struct_f779fe10",
     "type": "structural",
     "node_a": "psychological intervention",
     "node_b": "strengthening the reporting of observational studies in epidemiology",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 41.76,
@@ -327,13 +317,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_2c48a4c2",
+    "gap_id": "gap_struct_c76cc51d",
     "type": "structural",
     "node_a": "psychological intervention",
     "node_b": "observational study",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 41.76,
@@ -391,13 +379,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_d5845d27",
+    "gap_id": "gap_struct_90628402",
     "type": "structural",
     "node_a": "health care",
     "node_b": "evidence-based medicine",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 41.4,
@@ -455,13 +441,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_799fabc3",
+    "gap_id": "gap_struct_5a8139c7",
     "type": "structural",
     "node_a": "health care",
     "node_b": "consolidated standards of reporting trials",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 40.97,
@@ -519,13 +503,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_03be348a",
+    "gap_id": "gap_struct_a129cdab",
     "type": "structural",
     "node_a": "psychological intervention",
     "node_b": "evidence-based medicine",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 40.96,
@@ -583,13 +565,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_2a7133d8",
+    "gap_id": "gap_struct_0f7926ff",
     "type": "structural",
     "node_a": "health care",
     "node_b": "scope (computer science)",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 40.93,
@@ -647,13 +627,11 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_4c755c25",
+    "gap_id": "gap_struct_e3ef86be",
     "type": "structural",
     "node_a": "health care",
     "node_b": "cohort study",
-    "bridging_concepts": [
-      "medline"
-    ],
+    "bridging_concepts": [],
     "field_a": "Medicine",
     "field_b": "Decision Sciences",
     "leverage_score": 40.93,
@@ -711,7 +689,7 @@
     "question": null
   },
   {
-    "gap_id": "gap_struct_b97c58a7",
+    "gap_id": "gap_struct_1ab47bd5",
     "type": "structural",
     "node_a": "genome",
     "node_b": "bioinformatics",
