@@ -87,7 +87,7 @@ export interface Gap {
   field_b: string;
   leverage_score: number;
   score_components: {
-    betweenness_delta: number;
+    betweenness_centrality: number;
     community_reach: number;
     paper_velocity: number;
     cross_domain_bonus: number;

@@ -152,25 +152,45 @@ def _openalex_concepts(work: dict) -> list[str]:
     return result
 
 
+# Fields to suppress — known OpenAlex noise artifacts where domain-level labels
+# are overly broad or plainly wrong for the paper type (e.g. epidemiology
+# papers classified under "Political science" via the Social Sciences domain).
+_SUPPRESSED_FIELDS: frozenset[str] = frozenset({
+    "Political science", "Political Science",
+    "Social Sciences", "Social sciences",
+    "Arts and Humanities", "General",
+})
+
+
 def _openalex_fields(work: dict) -> list[str]:
-    """Derive fields-of-study from the work's primary topic / level-0 concepts."""
-    fields: list[str] = []
+    """Derive up to 2 clean fields-of-study for a work.
+
+    Uses primary_topic.field (most accurate) plus level-0 concepts as extras.
+    Suppresses known noisy domain-umbrella labels (Political science, etc.).
+    The domain key is intentionally excluded — it is often too broad.
+    """
+    candidates: list[str] = []
     topic = work.get("primary_topic") or {}
-    for key in ("field", "domain"):
-        name = (topic.get(key) or {}).get("display_name")
-        if name:
-            fields.append(name)
-    # add broad (level 0) concepts as additional field signals
+    # primary_topic.field is the most specific reliable signal
+    pf = (topic.get("field") or {}).get("display_name")
+    if pf and pf not in _SUPPRESSED_FIELDS:
+        candidates.append(pf)
+    # level-0 concepts add breadth but can be noisy — filter suppressions
     for c in work.get("concepts", []):
-        if c.get("level") == 0 and c.get("display_name"):
-            fields.append(c["display_name"])
-    # dedupe preserving order
+        if c.get("level") == 0:
+            name = c.get("display_name", "")
+            if name and name not in _SUPPRESSED_FIELDS:
+                candidates.append(name)
+
+    # dedupe preserving order, return at most 2
     seen: set[str] = set()
     result: list[str] = []
-    for f in fields:
+    for f in candidates:
         if f not in seen:
             seen.add(f)
             result.append(f)
+        if len(result) == 2:
+            break
     return result
 
 

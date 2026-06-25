@@ -99,10 +99,18 @@ def build_graph(
             }
             for p in top
         ]
+        # Keep at most 2 distinct fields per node (most common first).
+        # Raw field sets can be large and contradictory; two is enough for display.
+        from collections import Counter as _Counter
+        field_counts = _Counter(
+            f for p in src for f in p.fields_of_study
+        )
+        top_fields = [f for f, _ in field_counts.most_common(2)]
+
         G.add_node(
             concept,
             paper_count=concept_paper_count[concept],
-            field=list(concept_fields[concept]),
+            field=top_fields,
             community_id=0,  # filled below
             paper_ids=paper_ids,
             papers=papers_sample,
@@ -150,6 +158,16 @@ def graph_to_export_data(
     gaps = gaps or []
     failed_fields = failed_fields or []
 
+    # Prune orphan/dangling nodes (degree < 2) before export.
+    # Gap-anchor nodes are exempt so gap edges always have valid endpoints.
+    gap_anchors: set[str] = set()
+    for gap in gaps:
+        gap_anchors.add(gap.node_a)
+        gap_anchors.add(gap.node_b)
+    connected_nodes: set[str] = {
+        n for n in G.nodes() if G.degree(n) >= 2 or n in gap_anchors
+    }
+
     # Build a lookup: (node_a, node_b) → gap
     gap_edge_lookup: dict[tuple[str, str], object] = {}
     for gap in gaps:
@@ -159,6 +177,8 @@ def graph_to_export_data(
     # --- Nodes ---
     nodes = []
     for node, data in G.nodes(data=True):
+        if node not in connected_nodes:
+            continue
         nodes.append(
             {
                 "id": node,
@@ -174,6 +194,8 @@ def graph_to_export_data(
     # --- Edges ---
     edges = []
     for u, v, data in G.edges(data=True):
+        if u not in connected_nodes or v not in connected_nodes:
+            continue
         key = (min(u, v), max(u, v))
         gap = gap_edge_lookup.get(key)
         edges.append(

@@ -3,7 +3,7 @@ Score gaps by leverage: how much does bridging this gap unlock?
 
 Components (all normalised to [0, 1] for the final weighted score)
 ------------------------------------------------------------------
-betweenness_delta   : REAL betweenness centrality of the gap's anchor + bridge
+betweenness_centrality : mean betweenness centrality of the gap's anchor + bridge
                       nodes (nx.betweenness_centrality). High-betweenness anchors
                       sit on many shortest paths, so connecting them rewires the
                       most of the knowledge graph.
@@ -121,7 +121,7 @@ def score_gaps(G: nx.Graph, gaps: list[Gap]) -> list[Gap]:
         # Clean, display-ready components — all in [0, 1] so UI bars never overflow.
         # (Detection-internal keys like raw_indirect / cosine_similarity are dropped.)
         gap.score_components = {
-            "betweenness_delta": round(norm_bet, 4),
+            "betweenness_centrality": round(norm_bet, 4),
             "community_reach": round(norm_comm, 4),
             "paper_velocity": round(norm_vel, 4),
             "cross_domain_bonus": cross,

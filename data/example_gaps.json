@@ -1,21 +1,65 @@
 [
   {
-    "gap_id": "gap_struct_5d0d9634",
+    "gap_id": "gap_struct_57c4e154",
     "type": "structural",
-    "node_a": "pattern recognition (psychology)",
-    "node_b": "data science",
+    "node_a": "family medicine",
+    "node_b": "psychological intervention",
     "bridging_concepts": [
-      "artificial intelligence"
+      "medline"
     ],
-    "field_a": "Medicine",
-    "field_b": "Social Sciences",
-    "leverage_score": 79.77,
+    "field_a": "Decision Sciences",
+    "field_b": "Medicine",
+    "leverage_score": 43.22,
     "score_components": {
-      "raw_indirect": 80.0,
-      "betweenness_delta": 0.558,
-      "community_reach": 2,
-      "paper_velocity": 0.8096,
+      "betweenness_centrality": 0.1678,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6938,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 14,
+      "count_b": 9,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W4294215472",
+          "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
+          "year": 2009,
+          "citation_count": 64035
+        },
+        {
+          "paper_id": "https://openalex.org/W4294215472",
+          "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
+          "year": 2009,
+          "citation_count": 64035
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        }
+      ]
     },
     "question": {
       "question": "Do the contact networks that carry real epidemics share the scale-free degree distributions studied in network science, and if so, how does hub-node superspreading move the epidemic threshold away from the value classical compartmental models predict?",
@@ -23,226 +67,710 @@
       "historical_analogy": "Like Maxwell unifying electricity and magnetism \u2014 two well-studied phenomena whose equivalence was invisible until the right framework connected them.",
       "model_used": "precomputed-demo",
       "generated_at": "2026-06-24T00:00:00+00:00",
-      "gap_id": "gap_struct_5d0d9634"
+      "gap_id": "gap_struct_57c4e154"
     }
   },
   {
-    "gap_id": "gap_struct_3ab6d99f",
+    "gap_id": "gap_struct_57e16857",
     "type": "structural",
-    "node_a": "computational biology",
-    "node_b": "graphical user interface",
+    "node_a": "psychological intervention",
+    "node_b": "alternative medicine",
     "bridging_concepts": [
-      "software"
-    ],
-    "field_a": "Neuroscience",
-    "field_b": "Life Sciences",
-    "leverage_score": 79.45,
-    "score_components": {
-      "raw_indirect": 81.0,
-      "betweenness_delta": 0.5691,
-      "community_reach": 2,
-      "paper_velocity": 0.7813,
-      "cross_domain_bonus": 1.0
-    },
-    "question": null
-  },
-  {
-    "gap_id": "gap_struct_f5d1c5b8",
-    "type": "structural",
-    "node_a": "genetics",
-    "node_b": "data science",
-    "bridging_concepts": [
-      "computational biology"
+      "medline"
     ],
     "field_a": "Medicine",
-    "field_b": "Social Sciences",
-    "leverage_score": 79.41,
+    "field_b": "Decision Sciences",
+    "leverage_score": 42.42,
     "score_components": {
-      "raw_indirect": 126.0,
-      "betweenness_delta": 0.5083,
-      "community_reach": 2,
-      "paper_velocity": 0.8648,
+      "betweenness_centrality": 0.1669,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6629,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 9,
+      "count_b": 11,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2161374186",
+          "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement",
+          "year": 2015,
+          "citation_count": 26480
+        },
+        {
+          "paper_id": "https://openalex.org/W2161374186",
+          "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement",
+          "year": 2015,
+          "citation_count": 26480
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
     },
     "question": null
   },
   {
-    "gap_id": "gap_struct_f2f84207",
+    "gap_id": "gap_struct_66d1bdc6",
     "type": "structural",
-    "node_a": "machine learning",
-    "node_b": "computation",
+    "node_a": "health care",
+    "node_b": "strengthening the reporting of observational studies in epidemiology",
     "bridging_concepts": [
-      "artificial intelligence"
-    ],
-    "field_a": "Psychology",
-    "field_b": "History",
-    "leverage_score": 79.36,
-    "score_components": {
-      "raw_indirect": 87.0,
-      "betweenness_delta": 0.6022,
-      "community_reach": 2,
-      "paper_velocity": 0.7313,
-      "cross_domain_bonus": 1.0
-    },
-    "question": null
-  },
-  {
-    "gap_id": "gap_struct_69978e58",
-    "type": "structural",
-    "node_a": "software",
-    "node_b": "human genome",
-    "bridging_concepts": [
-      "computational biology"
+      "medline"
     ],
     "field_a": "Medicine",
-    "field_b": "Life Sciences",
-    "leverage_score": 79.35,
+    "field_b": "Decision Sciences",
+    "leverage_score": 42.21,
     "score_components": {
-      "raw_indirect": 117.0,
-      "betweenness_delta": 0.547,
-      "community_reach": 2,
-      "paper_velocity": 0.8081,
+      "betweenness_centrality": 0.161,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6629,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 9,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
     },
     "question": null
   },
   {
-    "gap_id": "gap_struct_a8521b84",
+    "gap_id": "gap_struct_316240d5",
     "type": "structural",
-    "node_a": "gene",
-    "node_b": "data science",
+    "node_a": "health care",
+    "node_b": "observational study",
     "bridging_concepts": [
-      "computational biology"
+      "medline"
     ],
     "field_a": "Medicine",
-    "field_b": "Social Sciences",
-    "leverage_score": 77.85,
+    "field_b": "Decision Sciences",
+    "leverage_score": 42.21,
     "score_components": {
-      "raw_indirect": 102.0,
-      "betweenness_delta": 0.4834,
-      "community_reach": 2,
-      "paper_velocity": 0.8371,
+      "betweenness_centrality": 0.161,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6629,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 9,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
     },
     "question": null
   },
   {
-    "gap_id": "gap_struct_5b66ea2c",
+    "gap_id": "gap_struct_f3187af0",
     "type": "structural",
-    "node_a": "data mining",
-    "node_b": "evolutionary biology",
+    "node_a": "psychological intervention",
+    "node_b": "strengthening the reporting of observational studies in epidemiology",
     "bridging_concepts": [
-      "computational biology"
+      "medline"
     ],
-    "field_a": "Psychology",
-    "field_b": "Life Sciences",
-    "leverage_score": 77.28,
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 41.76,
     "score_components": {
-      "raw_indirect": 70.0,
-      "betweenness_delta": 0.5083,
-      "community_reach": 2,
-      "paper_velocity": 0.7797,
+      "betweenness_centrality": 0.1662,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6377,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 9,
+      "count_b": 9,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
     },
     "question": null
   },
   {
-    "gap_id": "gap_struct_875f1b0e",
+    "gap_id": "gap_struct_f591c216",
     "type": "structural",
-    "node_a": "data mining",
-    "node_b": "human genome",
+    "node_a": "psychological intervention",
+    "node_b": "observational study",
     "bridging_concepts": [
-      "computational biology"
+      "medline"
     ],
-    "field_a": "Psychology",
-    "field_b": "Life Sciences",
-    "leverage_score": 76.58,
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 41.76,
     "score_components": {
-      "raw_indirect": 130.0,
-      "betweenness_delta": 0.4945,
-      "community_reach": 2,
-      "paper_velocity": 0.7707,
+      "betweenness_centrality": 0.1662,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6377,
       "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 9,
+      "count_b": 9,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
     },
     "question": null
   },
   {
-    "gap_id": "gap_struct_41d50025",
+    "gap_id": "gap_struct_a6652c76",
     "type": "structural",
-    "node_a": "data mining",
-    "node_b": "exome sequencing",
+    "node_a": "health care",
+    "node_b": "evidence-based medicine",
+    "bridging_concepts": [
+      "medline"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 41.4,
+    "score_components": {
+      "betweenness_centrality": 0.1601,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.632,
+      "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 7,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_f444fe51",
+    "type": "structural",
+    "node_a": "health care",
+    "node_b": "consolidated standards of reporting trials",
+    "bridging_concepts": [
+      "medline"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 40.97,
+    "score_components": {
+      "betweenness_centrality": 0.1609,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6135,
+      "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 6,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_0051ea60",
+    "type": "structural",
+    "node_a": "psychological intervention",
+    "node_b": "evidence-based medicine",
+    "bridging_concepts": [
+      "medline"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 40.96,
+    "score_components": {
+      "betweenness_centrality": 0.1653,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6068,
+      "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 9,
+      "count_b": 7,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        },
+        {
+          "paper_id": "https://openalex.org/W3022903699",
+          "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+          "year": 2009,
+          "citation_count": 27877
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_061e9174",
+    "type": "structural",
+    "node_a": "health care",
+    "node_b": "scope (computer science)",
+    "bridging_concepts": [
+      "medline"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 40.93,
+    "score_components": {
+      "betweenness_centrality": 0.1597,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6135,
+      "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 6,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_3b75a150",
+    "type": "structural",
+    "node_a": "health care",
+    "node_b": "cohort study",
+    "bridging_concepts": [
+      "medline"
+    ],
+    "field_a": "Medicine",
+    "field_b": "Decision Sciences",
+    "leverage_score": 40.93,
+    "score_components": {
+      "betweenness_centrality": 0.1597,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.6135,
+      "cross_domain_bonus": 1.0
+    },
+    "evidence": {
+      "count_a": 11,
+      "count_b": 6,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        },
+        {
+          "paper_id": "https://openalex.org/W2891378911",
+          "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+          "year": 2018,
+          "citation_count": 40289
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        },
+        {
+          "paper_id": "https://openalex.org/W2599076725",
+          "title": "The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies",
+          "year": 2007,
+          "citation_count": 21595
+        }
+      ]
+    },
+    "question": null
+  },
+  {
+    "gap_id": "gap_struct_9bdde6de",
+    "type": "structural",
+    "node_a": "genome",
+    "node_b": "bioinformatics",
     "bridging_concepts": [
       "computational biology"
     ],
-    "field_a": "Psychology",
+    "field_a": "Biology",
     "field_b": "Biochemistry, Genetics and Molecular Biology",
-    "leverage_score": 74.18,
+    "leverage_score": 61.09,
     "score_components": {
-      "raw_indirect": 70.0,
-      "betweenness_delta": 0.4779,
-      "community_reach": 2,
-      "paper_velocity": 0.6981,
+      "betweenness_centrality": 0.6457,
+      "community_reach": 0.3333,
+      "paper_velocity": 0.7397,
       "cross_domain_bonus": 1.0
     },
-    "question": null
-  },
-  {
-    "gap_id": "gap_struct_0334e132",
-    "type": "structural",
-    "node_a": "data mining",
-    "node_b": "exome",
-    "bridging_concepts": [
-      "computational biology"
-    ],
-    "field_a": "Psychology",
-    "field_b": "Biochemistry, Genetics and Molecular Biology",
-    "leverage_score": 74.18,
-    "score_components": {
-      "raw_indirect": 70.0,
-      "betweenness_delta": 0.4779,
-      "community_reach": 2,
-      "paper_velocity": 0.6981,
-      "cross_domain_bonus": 1.0
-    },
-    "question": null
-  },
-  {
-    "gap_id": "gap_struct_66bac429",
-    "type": "structural",
-    "node_a": "genetics",
-    "node_b": "software",
-    "bridging_concepts": [
-      "computational biology"
-    ],
-    "field_a": "Medicine",
-    "field_b": "Medicine",
-    "leverage_score": 73.29,
-    "score_components": {
-      "raw_indirect": 189.0,
-      "betweenness_delta": 0.6022,
-      "community_reach": 2,
-      "paper_velocity": 0.8885,
-      "cross_domain_bonus": 0.0
-    },
-    "question": null
-  },
-  {
-    "gap_id": "gap_struct_978916d8",
-    "type": "structural",
-    "node_a": "genetics",
-    "node_b": "r package",
-    "bridging_concepts": [
-      "computational biology"
-    ],
-    "field_a": "Medicine",
-    "field_b": "Life Sciences",
-    "leverage_score": 71.83,
-    "score_components": {
-      "raw_indirect": 105.0,
-      "betweenness_delta": 0.4033,
-      "community_reach": 2,
-      "paper_velocity": 0.7085,
-      "cross_domain_bonus": 1.0
+    "evidence": {
+      "count_a": 18,
+      "count_b": 10,
+      "count_both": 0,
+      "sample_a": [
+        {
+          "paper_id": "https://openalex.org/W4294216483",
+          "title": "KEGG: Kyoto Encyclopedia of Genes and Genomes",
+          "year": 2000,
+          "citation_count": 39183
+        },
+        {
+          "paper_id": "https://openalex.org/W2168909179",
+          "title": "Initial sequencing and analysis of the human genome",
+          "year": 2001,
+          "citation_count": 24578
+        },
+        {
+          "paper_id": "https://openalex.org/W2168909179",
+          "title": "Initial sequencing and analysis of the human genome",
+          "year": 2001,
+          "citation_count": 24574
+        }
+      ],
+      "sample_b": [
+        {
+          "paper_id": "https://openalex.org/W2097382368",
+          "title": "The CLUSTAL_X windows interface: flexible strategies for multiple sequence alignment aided by quality analysis tools",
+          "year": 1997,
+          "citation_count": 39215
+        },
+        {
+          "paper_id": "https://openalex.org/W1577577364",
+          "title": "Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes",
+          "year": 2002,
+          "citation_count": 20068
+        },
+        {
+          "paper_id": "https://openalex.org/W1577577364",
+          "title": "Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes",
+          "year": 2002,
+          "citation_count": 20068
+        }
+      ]
     },
     "question": null
   }

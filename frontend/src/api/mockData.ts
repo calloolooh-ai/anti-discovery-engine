@@ -179,7 +179,7 @@ export const mockGap: Gap = {
   field_b: "Medicine",
   leverage_score: 87,
   score_components: {
-    betweenness_delta: 0.34,
+    betweenness_centrality: 0.34,
     community_reach: 0.91,
     paper_velocity: 0.62,
     cross_domain_bonus: 0.25,

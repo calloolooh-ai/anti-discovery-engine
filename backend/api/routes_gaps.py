@@ -31,7 +31,7 @@ _FALLBACK_DEMO_GAPS: list[Gap] = [
         field_b="Medicine / Epidemiology",
         leverage_score=94.0,
         score_components={
-            "betweenness_delta": 0.87,
+            "betweenness_centrality": 0.87,
             "community_reach": 0.92,
             "paper_velocity": 0.78,
             "cross_domain_bonus": 1.0,
@@ -55,7 +55,7 @@ _FALLBACK_DEMO_GAPS: list[Gap] = [
         field_b="Medicine",
         leverage_score=81.0,
         score_components={
-            "betweenness_delta": 0.74,
+            "betweenness_centrality": 0.74,
             "community_reach": 0.80,
             "paper_velocity": 0.65,
             "cross_domain_bonus": 1.0,
