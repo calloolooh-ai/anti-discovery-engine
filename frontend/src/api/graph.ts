@@ -1,5 +1,18 @@
-import type { BuildRequest, JobStatus, GraphExport } from "../types";
+import type { BuildRequest, JobStatus, GraphExport, Gap } from "../types";
 import { apiFetch } from "./client";
+
+export interface SyncBuildResponse {
+  job_id: string;
+  graph: GraphExport;
+  gaps: Gap[];
+}
+
+export function buildGraphSync(req: BuildRequest): Promise<SyncBuildResponse> {
+  return apiFetch<SyncBuildResponse>("/graph/build/sync", {
+    method: "POST",
+    body: JSON.stringify(req),
+  });
+}
 
 export function buildGraph(req: BuildRequest): Promise<{ job_id: string }> {
   return apiFetch<{ job_id: string }>("/graph/build", {

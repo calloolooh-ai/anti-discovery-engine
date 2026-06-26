@@ -66,13 +66,16 @@ function App() {
 
   const handleBuild = useCallback(
     async (req: BuildRequest) => {
-      // Clear the stale (demo) selection so the new graph's gaps drive the panel
       setSelectedGapId(null);
-      startBuild(req, (jobId) => {
-        fetchGaps(jobId);
+      startBuild(req, (jobId, preloadedGaps) => {
+        if (preloadedGaps?.length) {
+          setGaps(preloadedGaps);
+        } else {
+          fetchGaps(jobId);
+        }
       });
     },
-    [startBuild, fetchGaps]
+    [startBuild, fetchGaps, setGaps]
   );
 
   const handleModeChange = useCallback(

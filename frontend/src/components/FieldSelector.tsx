@@ -18,8 +18,6 @@ interface Props {
   onBuild: (req: BuildRequest) => void;
 }
 
-const IS_DEMO = !["localhost", "127.0.0.1"].includes(window.location.hostname);
-
 export const FieldSelector: React.FC<Props> = ({
   isBuilding,
   graphData,
@@ -156,27 +154,11 @@ export const FieldSelector: React.FC<Props> = ({
 
       <button
         onClick={handleBuild}
-        disabled={isBuilding || selected.size === 0 || IS_DEMO}
-        title={IS_DEMO ? "Requires local backend — see GitHub to run locally" : undefined}
-        style={{ ...styles.buildBtn, ...(IS_DEMO ? styles.buildBtnDisabled : {}) }}
+        disabled={isBuilding || selected.size === 0}
+        style={styles.buildBtn}
       >
         {isBuilding ? "Building…" : "Build Graph"}
       </button>
-
-      {IS_DEMO && (
-        <p style={styles.backendNote}>
-          Hosted demo — live builds need the{" "}
-          <a
-            href="https://github.com/calloolooh-ai/the-gap-engine"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={styles.backendLink}
-          >
-            local backend
-          </a>
-          . The example graph is fully functional.
-        </p>
-      )}
 
       {graphData && (
         <div style={styles.stats}>
@@ -318,7 +300,7 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#4b5563",
   },
   buildBtn: {
-    margin: "14px 16px 4px",
+    margin: "14px 16px",
     padding: "9px 0",
     background: "#f59e0b",
     color: "#0f0f0f",
@@ -327,22 +309,6 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 6,
     letterSpacing: "0.02em",
     cursor: "pointer",
-  },
-  buildBtnDisabled: {
-    background: "#2d2d2d",
-    color: "#4b5563",
-    cursor: "not-allowed",
-  },
-  backendNote: {
-    margin: "0 16px 14px",
-    fontSize: 11,
-    color: "#4b5563",
-    lineHeight: 1.5,
-    textAlign: "center" as const,
-  },
-  backendLink: {
-    color: "#6b7280",
-    textDecoration: "underline",
   },
   stats: {
     padding: "12px 16px",

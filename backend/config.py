@@ -35,9 +35,12 @@ TARGET_MIN_EDGES: int = 3000
 TARGET_MAX_EDGES: int = 8000
 
 # --- Paths ---
+_IS_VERCEL = os.getenv("VERCEL") == "1"
+
 BACKEND_DIR: Path = Path(__file__).parent
-DATA_DIR: Path = _root / "data"
-CACHE_DIR: Path = BACKEND_DIR / "data" / "cache"
+# On Vercel the project root is read-only; use /tmp for mutable data.
+DATA_DIR: Path = Path("/tmp/data") if _IS_VERCEL else _root / "data"
+CACHE_DIR: Path = Path("/tmp/cache") if _IS_VERCEL else BACKEND_DIR / "data" / "cache"
 HISTORICAL_GAPS_PATH: Path = DATA_DIR / "historical_gaps.json"
 EXAMPLE_GRAPH_PATH: Path = DATA_DIR / "example_graph.json"
 
@@ -45,4 +48,6 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # --- CORS ---
-CORS_ORIGINS: list[str] = ["http://localhost:5173"]
+CORS_ORIGINS: list[str] = (
+    ["*"] if _IS_VERCEL else ["http://localhost:5173"]
+)

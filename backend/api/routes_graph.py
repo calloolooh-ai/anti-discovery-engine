@@ -126,6 +126,32 @@ async def export_demo() -> dict:
     return json.loads(EXAMPLE_GRAPH_PATH.read_text())
 
 
+@router.post("/build/sync")
+async def build_graph_sync(request: BuildRequest) -> dict:
+    """Run the full pipeline synchronously and return graph + gaps in one response."""
+    from core.ingestion import fetch_papers_for_fields
+    from core.graph_builder import build_graph, graph_to_export_data
+    from core.gap_detector import detect_gaps
+    from core.leverage_scorer import score_gaps
+
+    job_id = str(uuid.uuid4())
+    papers, failed_fields = await fetch_papers_for_fields(
+        request.fields,
+        request.max_papers_per_field,
+        request.year_filter,
+    )
+    G = build_graph(papers)
+    raw_gaps = detect_gaps(G)
+    scored_gaps = score_gaps(G, raw_gaps)
+    export_data = graph_to_export_data(G, job_id, scored_gaps, failed_fields)
+
+    return {
+        "job_id": job_id,
+        "graph": export_data,
+        "gaps": [g.model_dump() for g in scored_gaps],
+    }
+
+
 @router.get("/export/{job_id}", response_model=GraphExport)
 async def export_graph(job_id: str) -> GraphExport:
     job = jobs.get(job_id)
