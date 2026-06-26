@@ -28,8 +28,10 @@ export const GapPanel: React.FC<Props> = ({
   const handleGenerate = async (gapId: string) => {
     setIsGenerating(true);
     try {
+      const gap = localGaps.find((g) => g.gap_id === gapId);
       const questions: ResearchQuestion[] = await generateQuestions({
         gap_ids: [gapId],
+        gaps: gap ? [gap] : [],
         use_high_quality: false,
       });
       if (questions.length > 0) {

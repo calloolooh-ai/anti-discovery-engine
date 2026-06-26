@@ -33,7 +33,7 @@ _FALLBACK_DEMO_GAPS: list[Gap] = [
         score_components={
             "betweenness_centrality": 0.87,
             "community_reach": 0.92,
-            "paper_velocity": 0.78,
+            "citation_momentum": 0.78,
             "cross_domain_bonus": 1.0,
         },
         question={
@@ -57,7 +57,7 @@ _FALLBACK_DEMO_GAPS: list[Gap] = [
         score_components={
             "betweenness_centrality": 0.74,
             "community_reach": 0.80,
-            "paper_velocity": 0.65,
+            "citation_momentum": 0.65,
             "cross_domain_bonus": 1.0,
         },
         question=None,
@@ -78,6 +78,7 @@ def _load_demo_gaps() -> list[Gap]:
 
 class QuestionsRequest(BaseModel):
     gap_ids: list[str]
+    gaps: list[Gap] = []  # full gap objects from the client (stateless serverless)
     use_high_quality: bool = False
 
 
@@ -118,11 +119,14 @@ async def score(job_id: str) -> list[Gap]:
 async def generate_questions_endpoint(body: QuestionsRequest) -> list[ResearchQuestion]:
     from core.question_generator import generate_questions
 
-    # Collect all gaps: demo gaps + all job gaps
+    # Build lookup: client-provided gaps take priority (handles stateless serverless),
+    # then fall back to demo gaps and in-memory job gaps.
     gap_lookup: dict[str, Gap] = {g.gap_id: g for g in _load_demo_gaps()}
     for job in jobs.values():
         for gap in job.get("gaps") or []:
             gap_lookup[gap.gap_id] = gap
+    for g in body.gaps:
+        gap_lookup[g.gap_id] = g
 
     requested_gaps = [gap_lookup[gid] for gid in body.gap_ids if gid in gap_lookup]
     if not requested_gaps:

@@ -107,6 +107,7 @@ export interface ResearchQuestion {
 
 export interface QuestionRequest {
   gap_ids: string[];
+  gaps: Gap[];
   use_high_quality: boolean;
 }
 
