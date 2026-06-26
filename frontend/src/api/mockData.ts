@@ -206,7 +206,7 @@ export const mockGaps: Gap[] = [
       citation_momentum: 0.65,
       cross_domain_bonus: 1.0,
     },
-    question: null,
+    question: undefined,
   },
   {
     gap_id: "gap_003",
@@ -223,7 +223,7 @@ export const mockGaps: Gap[] = [
       citation_momentum: 0.55,
       cross_domain_bonus: 1.0,
     },
-    question: null,
+    question: undefined,
   },
 ];
 
