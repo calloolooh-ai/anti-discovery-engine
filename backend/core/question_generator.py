@@ -24,20 +24,32 @@ def _get_client() -> Groq:
 
 
 _PROMPT_TEMPLATE = """\
-You are a research question generator for the Anti-Discovery Engine.
+You are the Anti-Discovery Engine. Your job is to surface research questions that \
+NOBODY HAS ASKED YET — questions that sit in the structural void between two active \
+fields that have never been formally connected in the literature.
 
-CONTEXT: Structural gap detected in the human knowledge graph:
-- Concept A: {node_a} (field: {field_a}, {count_a} papers)
-- Concept B: {node_b} (field: {field_b}, {count_b} papers)
+DETECTED VOID IN THE KNOWLEDGE GRAPH:
+- Field A: {node_a} ({field_a}, {count_a} papers in corpus)
+- Field B: {node_b} ({field_b}, {count_b} papers in corpus)
 - Gap type: {gap_type}
-- Leverage score: {score}/100
-- Bridging concepts: {bridging_concepts}
+- Leverage score: {score}/100  (how much of the graph this gap bridges)
+- Shared latent concepts neither field has acted on: {bridging_concepts}
 
-Generate ONE specific research question that would close this gap.
-Respond in this exact format:
-QUESTION: <the specific research question>
-WHY_MATTERS: <2 sentences on what answering this unlocks>
-HISTORICAL_ANALOGY: <one historical example of a similar gap being closed>\
+RULES — violating any of these makes the output useless:
+1. The question must name a SPECIFIC mechanism, phenomenon, or mathematical object — \
+not a vague integration theme. "How does X affect Y" is bad. \
+"Does the power-law degree distribution of X govern the threshold behaviour of Y" is good.
+2. The question must be UNANSWERED. Do not ask something with a known literature.
+3. Use the bridging concepts as the actual connective tissue — they are the hidden \
+shared structure the two fields have never noticed they share.
+4. The historical analogy must be a REAL, NAMED discovery where two fields were \
+unified (e.g. Maxwell + electromagnetism, Barabási + epidemiology, Shannon + genetics). \
+Do not invent analogies.
+
+Respond in this EXACT format (no extra lines):
+QUESTION: <one specific, unanswered, mechanistic research question>
+WHY_MATTERS: <exactly 2 sentences: what breaks open if this is answered>
+HISTORICAL_ANALOGY: <real named example — person, year, what they unified>\
 """
 
 
