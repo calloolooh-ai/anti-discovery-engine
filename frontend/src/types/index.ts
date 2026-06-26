@@ -89,7 +89,7 @@ export interface Gap {
   score_components: {
     betweenness_centrality: number;
     community_reach: number;
-    paper_velocity: number;
+    citation_momentum: number;
     cross_domain_bonus: number;
   };
   evidence?: GapEvidence | null;
